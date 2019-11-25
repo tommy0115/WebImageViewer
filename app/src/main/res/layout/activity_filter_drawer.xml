@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer"
+    android:layout_width="200dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sort By"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/sortByRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/best_match"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onClickFilterOptionRadioGroup"
+                    android:text="Best match" />
+
+                <RadioButton
+                    android:id="@+id/newest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickFilterOptionRadioGroup"
+                    android:text="Newest" />
+
+                <RadioButton
+                    android:id="@+id/oldest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickFilterOptionRadioGroup"
+                    android:text="Oldest" />
+
+                <RadioButton
+                    android:id="@+id/most_popular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickFilterOptionRadioGroup"
+                    android:text="Most popular" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="License type"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/licenseTypeRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rf_and_rm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onClickFilterOptionRadioGroup"
+                    android:text="RF and RM" />
+
+                <RadioButton
+                    android:id="@+id/royalty_free"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickFilterOptionRadioGroup"
+                    android:text="Royalty-free(RF)" />
+
+                <RadioButton
+                    android:id="@+id/rights_managed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickFilterOptionRadioGroup"
+                    android:text="Rights-managed(RM)" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/close_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_small_round_background"
+        android:backgroundTint="@color/colorAccent"
+        android:text="close drawer"
+        android:textColor="@android:color/white" />
+
+
+</LinearLayout>

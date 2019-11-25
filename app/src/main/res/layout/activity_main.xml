@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:elevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/app_name"
+                        android:textColor="@android:color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/sort_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@id/open_filter_drawer"
+                        android:background="@drawable/ic_toolbar_toggle_background"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <ImageButton
+                            android:id="@+id/column_sort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_selector_list_type"
+                            android:onClick="onClickViewSortButton"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_view_column_black_24dp"
+                            android:tint="@android:color/white" />
+
+                        <ImageButton
+                            android:id="@+id/list_sort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_selector_list_type"
+                            android:onClick="onClickViewSortButton"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_view_list_black_24dp"
+                            android:tint="@android:color/white" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/open_filter_drawer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_filter_list_black_24dp"
+                        android:text="Open Drawer"
+                        android:tint="@android:color/white" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:padding="10dp"
+                    android:elevation="10dp">
+
+                    <ImageButton
+                        android:id="@+id/left_move_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:background="@android:color/transparent"
+                        android:onClick="onClickPageMoveButton"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                        android:tint="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center">
+
+                        <EditText
+                            android:id="@+id/edit_page"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/ic_small_round_background"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:maxLines="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="of 100"
+                            android:textColor="@android:color/white" />
+
+                        <Button
+                            android:id="@+id/page_go"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/ic_circle_background"
+                            android:onClick="onClickPageMoveButton"
+                            android:padding="5dp"
+                            android:text="GO"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+
+
+                    <ImageButton
+                        android:id="@+id/right_move_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@android:color/transparent"
+                        android:onClick="onClickPageMoveButton"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                        android:tint="@android:color/white" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/activity_filter_drawer" />
+
+        </android.support.v4.widget.DrawerLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_overlay"
+        android:touchscreenBlocksFocus="true">
+
+        <ProgressBar
+            android:id="@+id/progress_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</FrameLayout>
